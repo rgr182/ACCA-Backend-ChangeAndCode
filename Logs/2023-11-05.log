@@ -1,0 +1,218 @@
+DEBUG|2023-11-05 02:16:40.2235|0|Program|init main 
+INFO|2023-11-05 02:16:42.2631|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-05 02:16:42.2833|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-05 02:16:42.2869|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-05 02:16:42.2869|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-05 02:16:42.2869|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
+ERROR|2023-11-05 02:16:51.8675|20102|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (192ms) [Parameters=[@__email_0='?' (Size = 4000), @__pass_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[Name], [u].[Password], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__pass_1 
+ERROR|2023-11-05 02:16:51.9316|10100|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'ACCA_Backend.DataAccess.Repository.Context.AccaSystemContext'.
+System.AggregateException: An error occurred while writing to logger(s). (The ConnectionString property has not been initialized.)
+ ---> System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+   at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+   at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass20_0`6.<Define>g__Log|0(ILogger logger, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, Exception exception)
+   at Microsoft.EntityFrameworkCore.Diagnostics.Internal.RelationalCommandDiagnosticsLogger.LogCommandError(DbCommand command, TimeSpan duration, EventDefinition`6 definition)
+   at Microsoft.EntityFrameworkCore.Diagnostics.Internal.RelationalCommandDiagnosticsLogger.CommandErrorAsync(IRelationalConnection connection, DbCommand command, DbContext context, DbCommandMethod executeMethod, Guid commandId, Guid connectionId, Exception exception, DateTimeOffset startTime, TimeSpan duration, CommandSource commandSource, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+ERROR|2023-11-05 02:16:52.1179|0|ACCA_Backend.DataAccess.Services.UsersService|An error occurred while writing to logger(s). (The ConnectionString property has not been initialized.) System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+ERROR|2023-11-05 02:16:52.2465|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+ERROR|2023-11-05 02:16:52.3282|1|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+ERROR|2023-11-05 02:16:52.3389|13|Microsoft.AspNetCore.Server.Kestrel|Connection id "0HMUTQU5GIV17", Request id "0HMUTQU5GIV17:00000009": An unhandled exception was thrown by the application. System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at NLog.Extensions.Logging.NLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+WARN|2023-11-05 02:16:52.3389|0|Microsoft.AspNetCore.Server.Kestrel|Connection processing ended abnormally. System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+   at NLog.Targets.DatabaseTarget.Write(LogEventInfo logEvent)
+   at NLog.Targets.Target.Write(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncThreadSafe(AsyncLogEventInfo logEvent)
+   at NLog.Targets.Target.WriteAsyncLogEvent(AsyncLogEventInfo logEvent)
+   at NLog.LoggerImpl.WriteToTargetWithFilterChain(Target target, FilterResult result, LogEventInfo logEvent, AsyncContinuation onException)
+   at NLog.LoggerImpl.Write(Type loggerType, TargetWithFilterChain targetsForLevel, LogEventInfo logEvent, LogFactory logFactory)
+   at NLog.Logger.WriteToTargets(Type wrapperType, LogEventInfo logEvent, TargetWithFilterChain targetsForLevel)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|13_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+DEBUG|2023-11-05 02:18:49.1976|0|Program|init main 
+INFO|2023-11-05 02:18:50.7466|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-05 02:18:50.7670|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-05 02:18:50.7710|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-05 02:18:50.7710|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-05 02:18:50.7710|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
+ERROR|2023-11-05 02:19:04.1971|20102|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (186ms) [Parameters=[@__email_0='?' (Size = 4000), @__pass_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[Name], [u].[Password], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__pass_1 
+ERROR|2023-11-05 02:19:04.8483|10100|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'ACCA_Backend.DataAccess.Repository.Context.AccaSystemContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserType'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c7f5ae52-b0f5-4291-8ce3-2a767b985154
+Error Number:207,State:1,Class:16 Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserType'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c7f5ae52-b0f5-4291-8ce3-2a767b985154
+Error Number:207,State:1,Class:16
+ERROR|2023-11-05 02:19:05.0805|0|ACCA_Backend.DataAccess.Services.UsersService|Invalid column name 'UserType'. Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserType'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at ACCA_Backend.DataAccess.Repository.UsersRepository.GetUserByEmailAndPassword(String email, String pass) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Repository\UsersRepository.cs:line 24
+   at ACCA_Backend.DataAccess.Services.UsersService.GetUserByEmailAndPassword(String email, String pass) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\UsersService.cs:line 27
+ClientConnectionId:c7f5ae52-b0f5-4291-8ce3-2a767b985154
+Error Number:207,State:1,Class:16
+ERROR|2023-11-05 02:19:05.3062|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+DEBUG|2023-11-05 02:19:58.1657|0|Program|init main 
+INFO|2023-11-05 02:19:59.3427|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-05 02:19:59.3604|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-05 02:19:59.3604|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-05 02:19:59.3650|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-05 02:19:59.3650|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
+ERROR|2023-11-05 02:20:09.9985|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:20:10.2551|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+ERROR|2023-11-05 02:20:40.9175|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:20:41.1108|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+ERROR|2023-11-05 02:21:15.2011|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:21:15.3788|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+ERROR|2023-11-05 02:21:38.8640|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:21:39.0549|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+ERROR|2023-11-05 02:22:58.1660|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:22:58.3417|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+DEBUG|2023-11-05 02:25:14.1124|0|Program|init main 
+INFO|2023-11-05 02:25:15.3251|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-05 02:25:15.3596|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-05 02:25:15.3647|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-05 02:25:15.3647|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-05 02:25:15.3647|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
+ERROR|2023-11-05 02:25:24.6432|0|ACCA_Backend.DataAccess.Services.UsersService|Object reference not set to an instance of an object. System.NullReferenceException: Object reference not set to an instance of an object.
+   at ACCA_Backend.DataAccess.Services.SessionService.SaveSession(Users user) in C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\DataAccess\Services\SessionsService.cs:line 44
+ERROR|2023-11-05 02:25:24.8694|0|ACCA_Backend.Controllers.SecurityController|Some error happened please contact Sys Admin 
+DEBUG|2023-11-05 02:29:18.8045|0|Program|init main 
+INFO|2023-11-05 02:29:20.2210|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-05 02:29:20.2412|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-05 02:29:20.2412|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-05 02:29:20.2412|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-05 02:29:20.2412|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 

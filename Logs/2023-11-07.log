@@ -1,0 +1,6 @@
+DEBUG|2023-11-07 11:47:05.3857|0|Program|init main 
+INFO|2023-11-07 11:47:11.1011|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-07 11:47:11.1301|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-07 11:47:11.1301|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-07 11:47:11.1373|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-07 11:47:11.1373|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 

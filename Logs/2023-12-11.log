@@ -1,0 +1,6 @@
+DEBUG|2023-12-11 20:42:57.3369|0|Program|Init main 
+INFO|2023-12-11 20:42:59.1522|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-12-11 20:42:59.1703|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-12-11 20:42:59.1703|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-12-11 20:42:59.1703|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-12-11 20:42:59.1765|0|Microsoft.Hosting.Lifetime|Content root path: C:\Programas\ACCA-Backend-Raul\ 

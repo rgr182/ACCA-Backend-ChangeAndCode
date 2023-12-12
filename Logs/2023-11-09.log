@@ -1,0 +1,12 @@
+DEBUG|2023-11-09 14:58:23.9777|0|Program|init main 
+INFO|2023-11-09 14:58:31.6875|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-09 14:58:31.7339|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-09 14:58:31.7460|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-09 14:58:31.7460|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-09 14:58:31.7460|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
+DEBUG|2023-11-09 15:20:17.3120|0|Program|init main 
+INFO|2023-11-09 15:20:26.5278|14|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7200 
+INFO|2023-11-09 15:20:26.6397|14|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5215 
+INFO|2023-11-09 15:20:26.6770|0|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+INFO|2023-11-09 15:20:26.7661|0|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+INFO|2023-11-09 15:20:26.8205|0|Microsoft.Hosting.Lifetime|Content root path: C:\Users\EMILIANOSANCHEZ\Documents\ACCA\ACCA-Backend\ 
